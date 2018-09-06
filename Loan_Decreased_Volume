@@ -1,0 +1,35 @@
+import plotly.plotly as py
+py.plotly.tools.set_credentials_file(username='lpegram', api_key='XXXXXXXXXXXXXX')
+import pandas as pd
+import io
+import numpy as np
+import plotly.figure_factory as ff
+
+
+
+# Add histogram data
+
+Q2NegativeConv = np.genfromtxt("C:\\Users\Lisa.Pegram\\Downloads\\Q3_Conv_Negative_Change.csv", delimiter=","
+                               ,skip_header=1)
+
+
+
+Q1PostiveConv = np.genfromtxt("C:\\Users\Lisa.Pegram\\Downloads\\Q1_Conv_Negative_Change.csv", delimiter=","
+                              , skip_header=1)
+
+
+hist_data =[Q2NegativeConv, Q1PostiveConv]
+
+#print(Q1NegativeGovt)
+
+#group_labels = ['Q1 Negative Margin Impact Govt']
+group_labels = ['Q2 Negative Margin Impact Conv', 'Q1 Negative Margin Impact Conv']
+
+#print(type(hist_data))
+#print(hist_data)
+# Create distplot with custom bin_size
+fig = ff.create_distplot(hist_data, group_labels, bin_size=.2)
+
+
+# Plot!
+py.iplot(fig, filename='Distribution Plot of Fico Scores Highs Conv Comparison')
