@@ -1,5 +1,5 @@
 import plotly.plotly as py
-py.plotly.tools.set_credentials_file(username='lpegram', api_key='**********')
+py.plotly.tools.set_credentials_file(username='lpegram', api_key='wc3S5UG8FWOPiq5ZgyAA')
 
 
 import pandas as pd
@@ -44,9 +44,11 @@ data = [ dict(
                 title="ABA Originating Prospects"
             )
         ))]
+# this is where you would apply the additional data in the data array I would change the color
+# https://plot.ly/python/line-and-scatter/
 
 layout = dict(
-        title = 'ABA Originating Prospects<br>(Hover for airport names)',
+        title = 'ABA Originating Prospects',
         #colorbar = True,
         colorbar=False,
         geo = dict(
@@ -54,8 +56,8 @@ layout = dict(
             projection=dict( type='albers usa' ),
             showland = True,
             landcolor = "rgb(250, 250, 250)",
-            subunitcolor = "rgb(217, 217, 217)",
-            countrycolor = "rgb(217, 217, 217)",
+            subunitcolor = "rgb(105, 105, 105)",
+            countrycolor = "rgb(105, 105, 105)",
             countrywidth = 0.5,
             subunitwidth = 0.5
         ),
